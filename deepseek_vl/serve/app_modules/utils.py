@@ -301,7 +301,7 @@ def parse_ref_bbox(response, image):
             text_x = box[0]
             text_y = box[1] - 20
             text_color = box_color
-            font = ImageFont.truetype('./deepseek_vl/serve/assets/simsun.ttc', size=20)
+            font = ImageFont.truetype('DejaVuSans.ttf', size=20)
             draw.text((text_x, text_y), label, font=font, fill=text_color)
 
         return image
