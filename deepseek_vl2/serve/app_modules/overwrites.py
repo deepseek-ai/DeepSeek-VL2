@@ -22,8 +22,8 @@ from __future__ import annotations
 import logging
 from typing import List, Tuple
 
-from deepseek_vl.serve.app_modules.presets import gr
-from deepseek_vl.serve.app_modules.utils import convert_asis, convert_mdtext, detect_converted_mark
+from deepseek_vl2.serve.app_modules.presets import gr
+from deepseek_vl2.serve.app_modules.utils import convert_asis, convert_mdtext, detect_converted_mark
 
 
 def compact_text_chunks(self, prompt, text_chunks: List[str]) -> List[str]:
@@ -58,8 +58,8 @@ def postprocess(
     return temp
 
 
-with open("deepseek_vl/serve/assets/custom.js", "r", encoding="utf-8") as f, open(
-    "deepseek_vl/serve/assets/Kelpy-Codos.js", "r", encoding="utf-8"
+with open("deepseek_vl2/serve/assets/custom.js", "r", encoding="utf-8") as f, open(
+    "deepseek_vl2/serve/assets/Kelpy-Codos.js", "r", encoding="utf-8"
 ) as f2:
     customJS = f.read()
     kelpyCodos = f2.read()

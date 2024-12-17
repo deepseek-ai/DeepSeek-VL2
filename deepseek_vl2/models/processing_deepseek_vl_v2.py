@@ -559,7 +559,7 @@ class DeepseekVLV2Processor(ProcessorMixin):
                 for j in range(0, best_width, self.image_size):
                     images_list.append(
                         self.image_transform(local_view.crop((j, i, j + self.image_size, i + self.image_size))))
-
+            
             """record height / width crop num"""
             num_width_tiles, num_height_tiles = best_width // self.image_size, best_height // self.image_size
             images_spatial_crop.append([num_width_tiles, num_height_tiles])
