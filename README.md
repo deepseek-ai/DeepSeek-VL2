@@ -156,6 +156,7 @@ inputs_embeds = vl_gpt.prepare_inputs_embeds(**prepare_inputs)
 
 # run the model to get the response
 outputs = vl_gpt.language.generate(
+    input_ids = prepare_inputs["input_ids"].to(vl_gpt.device),
     inputs_embeds=inputs_embeds,
     attention_mask=prepare_inputs.attention_mask,
     pad_token_id=tokenizer.eos_token_id,
