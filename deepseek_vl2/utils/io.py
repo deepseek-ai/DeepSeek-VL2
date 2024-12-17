@@ -27,8 +27,8 @@ from transformers import AutoModelForCausalLM
 
 def load_pretrained_model(model_path: str):
 
-    from deepseek_vl.models.processing_deepseek_vl_v2 import DeepseekVLV2Processor
-    from deepseek_vl.models.modeling_deepseek_vl_v2 import DeepseekVLV2ForCausalLM
+    from deepseek_vl2.models.processing_deepseek_vl_v2 import DeepseekVLV2Processor
+    from deepseek_vl2.models.modeling_deepseek_vl_v2 import DeepseekVLV2ForCausalLM
 
     vl_chat_processor = DeepseekVLV2Processor.from_pretrained(model_path)
     tokenizer = vl_chat_processor.tokenizer

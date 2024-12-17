@@ -35,7 +35,7 @@ from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import ClassNotFound, get_lexer_by_name, guess_lexer
 
-from deepseek_vl.serve.app_modules.presets import (
+from deepseek_vl2.serve.app_modules.presets import (
     ALREADY_CONVERTED_MARK,
     BOX2COLOR,
     MAX_IMAGE_SIZE,
@@ -50,9 +50,9 @@ def configure_logger():
     logger.setLevel(logging.DEBUG)
 
     timestr = time.strftime("%Y%m%d-%H%M%S")
-    os.makedirs("deepseek_vl/serve/logs", exist_ok=True)
+    os.makedirs("deepseek_vl2/serve/logs", exist_ok=True)
     file_handler = logging.FileHandler(
-        f"deepseek_vl/serve/logs/{timestr}_gradio_log.log"
+        f"deepseek_vl2/serve/logs/{timestr}_gradio_log.log"
     )
     console_handler = logging.StreamHandler()
 
@@ -301,7 +301,7 @@ def parse_ref_bbox(response, image):
             text_x = box[0]
             text_y = box[1] - 20
             text_color = box_color
-            font = ImageFont.truetype('./deepseek_vl/serve/assets/simsun.ttc', size=20)
+            font = ImageFont.truetype('./deepseek_vl2/serve/assets/simsun.ttc', size=20)
             draw.text((text_x, text_y), label, font=font, fill=text_color)
 
         return image

@@ -24,8 +24,8 @@ from transformers import AutoModelForCausalLM
 
 import PIL.Image
 
-from deepseek_vl.models import DeepseekVLV2ForCausalLM, DeepseekVLV2Processor
-from deepseek_vl.serve.app_modules.utils import parse_ref_bbox
+from deepseek_vl2.models import DeepseekVLV2ForCausalLM, DeepseekVLV2Processor
+from deepseek_vl2.serve.app_modules.utils import parse_ref_bbox
 
 
 def load_pil_images(conversations: List[Dict[str, str]]) -> List[PIL.Image.Image]:

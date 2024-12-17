@@ -3,12 +3,12 @@ requires = ["setuptools>=40.6.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "deepseek_vl"
+name = "deepseek_vl2"
 version = "1.0.0"
-description = "DeepSeek-VL"
+description = "DeepSeek-VL2"
 authors = [{name = "DeepSeek-AI"}]
 license = {file = "LICENSE-CODE"}
-urls = {homepage = "https://github.com/deepseek-ai/DeepSeek-VL"}
+urls = {homepage = "https://github.com/deepseek-ai/DeepSeek-VL2"}
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [

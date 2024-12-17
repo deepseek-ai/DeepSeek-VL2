@@ -30,8 +30,8 @@ from transformers import (
     TextIteratorStreamer,
 )
 
-from deepseek_vl.models import DeepseekVLV2Processor, DeepseekVLV2ForCausalLM
-from deepseek_vl.models.conversation import Conversation
+from deepseek_vl2.models import DeepseekVLV2Processor, DeepseekVLV2ForCausalLM
+from deepseek_vl2.models.conversation import Conversation
 
 
 def load_model(model_path, dtype=torch.bfloat16):
