@@ -43,6 +43,9 @@
   <a href="LICENSE-MODEL">
     <img alt="Model License" src="https://img.shields.io/badge/Model_License-Model_Agreement-f5de53?&color=f5de53">
   </a>
+    <a href="https://replicate.com/chenxwh/deepseek-vl2" target="_blank">
+    <img src=https://replicate.com/chenxwh/deepseek-vl2/badge/>
+  </a>
 </div>
 
 
