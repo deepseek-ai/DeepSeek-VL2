@@ -34,7 +34,7 @@ class DeepseekV2Config(PretrainedConfig):
             Number of routed experts, None means dense model.
         routed_scaling_factor (`float`, *optional*, defaults to 1.0):
             Scaling factor or routed experts.
-        topk_method (`str`, *optional*, defaults to `gready`):
+        topk_method (`str`, *optional*, defaults to `greedy`):
             Topk method used in routed gate.
         n_group (`int`, *optional*, defaults to None):
             Number of groups for routed experts.
@@ -132,7 +132,7 @@ class DeepseekV2Config(PretrainedConfig):
         qk_rope_head_dim = 64,
         v_head_dim = 128,
         qk_nope_head_dim = 128,
-        topk_method = 'gready',
+        topk_method = 'greedy',
         n_group = None,
         topk_group = None,
         num_experts_per_tok = None,
