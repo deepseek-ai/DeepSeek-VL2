@@ -113,7 +113,7 @@ for i in range(startAt, len(files)):
             max_length_tokens=max_tokens, # Adapted max_tokens parameter
 		    repetition_penalty=1.1,
 		    max_context_length_tokens=4096,
-		    model_select_dropdown="deepseek-ai/deepseek-vl2-tiny",
+		    #model_select_dropdown="deepseek-ai/deepseek-vl2-tiny",
             api_name="/predict"
         )
 
