@@ -95,6 +95,9 @@ for i in range(startAt, len(files)):
         else:
             imageFile = handle_file(image_path)
 
+        # Reset state 
+        result = client.predict(api_name="/reset_state" )
+
         # Send the image file path and the prompt to the Gradio app for processing
         result = client.predict(
             input_images=[imageFile],           # Provide the file path directly
