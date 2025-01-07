@@ -127,7 +127,7 @@ for i in range(startAt, len(files)):
     hz = 1 / (seconds + 0.0001)
 
     # Output the result
-    print("result[0][0][1] ",result[0][0][1])
+    #print("result[0][0][1] ",result[0][0][1])
     question = this_user_prompt #Don't try to recover it from the list..
     response = result[0][0][1]
 
