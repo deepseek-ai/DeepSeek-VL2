@@ -118,8 +118,8 @@ examples_list = [
     [
         [
             "images/multi_image_1.jpeg",
-            "images/mi_2.jpeg",
-            "images/mi_3.jpeg"
+            "images/multi_image_2.jpeg",
+            "images/multi_image_3.jpeg"
         ],
         "能帮我用这几个食材做一道菜吗?",
     ]
@@ -663,7 +663,8 @@ if __name__ == "__main__":
     demo.title = "DeepSeek-VL2 Chatbot"
 
     reload_javascript()
-    demo.queue(concurrency_count=CONCURRENT_COUNT, max_size=MAX_EVENTS).launch(
+    demo.queue(#concurrency_count=CONCURRENT_COUNT, #<- for some reason this emmits an error!
+        max_size=MAX_EVENTS).launch(
         # share=False,
         share=True,
         favicon_path="deepseek_vl2/serve/assets/favicon.ico",
