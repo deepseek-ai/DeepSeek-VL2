@@ -69,6 +69,9 @@ Zhiyu Wu*, Xiaokang Chen*, Zizheng Pan*, Xingchao Liu*, Wen Liu**, Damai Dai, Hu
 ![](./images/vl2_teaser.jpeg)
 
 ## 2. Release
+
+✅ <b>2025-01-14</b>: 🚀🚀🚀 DeepSeek-VL2 is supported in <a href="https://github.com/PaddlePaddle/PaddleMIX/tree/develop/paddlemix/examples/deepseek_vl2">PaddleMIX</a> by Paddle Team.
+
 ✅ <b>2024-12-25</b>: Gradio Demo Example, Incremental Prefilling and VLMEvalKit Support.
 
 ✅ <b>2024-12-13</b>: DeepSeek-VL2 family released, including <code>DeepSeek-VL2-tiny</code>, <code>DeepSeek-VL2-small</code>, <code>DeepSeek-VL2</code>.
