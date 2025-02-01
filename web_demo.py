@@ -118,8 +118,8 @@ examples_list = [
     [
         [
             "images/multi_image_1.jpeg",
-            "images/mi_2.jpeg",
-            "images/mi_3.jpeg"
+            "images/multi_image_2.jpeg",
+            "images/multi_image_3.jpeg"
         ],
         "能帮我用这几个食材做一道菜吗?",
     ]
