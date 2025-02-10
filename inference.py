@@ -160,7 +160,7 @@ if __name__ == "__main__":
                         default="deepseek-ai/deepseek-vl2",
                         help="model name or local path to the model")
     parser.add_argument("--chunk_size", type=int, default=-1,
-                        help="chunk size for the model for prefiiling. "
+                        help="chunk size for the model for prefilling. "
                              "When using 40G gpu for vl2-small, set a chunk_size for incremental_prefilling."
                              "Otherwise, default value is -1, which means we do not use incremental_prefilling.")
     args = parser.parse_args()
