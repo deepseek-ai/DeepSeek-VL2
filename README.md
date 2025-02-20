@@ -56,6 +56,16 @@
   <a href="https://huggingface.co/spaces/deepseek-ai/deepseek-vl2-small"><b>👁️ Demo</b></a>
 </p>
 
+
+1. [Introduction](#1-introduction)  
+2. [Release](#2-release)  
+3. [Model Download](#3-model-download)  
+4. [Quick Start](#4-quick-start)  
+5. [License](#5-license)  
+6. [Citation](#6-citation)  
+7. [Contact](#7-contact)
+
+
 ## 1. Introduction
 
 Introducing DeepSeek-VL2, an advanced series of large Mixture-of-Experts (MoE) Vision-Language Models that significantly improves upon its predecessor, DeepSeek-VL. DeepSeek-VL2 demonstrates superior capabilities across various tasks, including but not limited to visual question answering, optical character recognition,  document/table/chart understanding, and visual grounding. Our model series is composed of three variants: DeepSeek-VL2-Tiny, DeepSeek-VL2-Small and DeepSeek-VL2, with 1.0B, 2.8B and 4.5B activated parameters respectively.
