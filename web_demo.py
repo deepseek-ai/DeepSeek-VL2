@@ -151,13 +151,27 @@ def fetch_model(model_name: str, dtype=torch.bfloat16):
 def generate_prompt_with_history(
     text, images, history, vl_chat_processor, tokenizer, max_length=2048, language="en"
 ):
-    """Generate a prompt with history for the deepseek application."""
+    """
+    Generate a prompt with history for the deepseek application.
+
+    Args:
+        text (str): The text prompt.
+        images (list[PIL.Image.Image]): The image prompt.
+        history (list): List of previous conversation messages.
+        tokenizer: The tokenizer used for encoding the prompt.
+        max_length (int): The maximum length of the prompt.
+        language (str): The detected language code for setting response language.
+
+    Returns:
+        tuple: A tuple containing the generated prompt, image list, conversation, and conversation copy. If the prompt could not be generated within the max_length limit, returns None.
+    """
     global IMAGE_TOKEN
 
     sft_format = "deepseek"
     user_role_ind = 0
     bot_role_ind = 1
 
+    # Initialize conversation
     conversation = vl_chat_processor.new_chat_template()
     conversation.set_system_message(f"Please reply in {language} language.")
 
@@ -185,6 +199,7 @@ def generate_prompt_with_history(
     conversation.append_message(conversation.roles[user_role_ind], text)
     conversation.append_message(conversation.roles[bot_role_ind], "")
 
+    # Create a copy of the conversation to avoid history truncation in the UI
     conversation_copy = conversation.copy()
     logger.info("=" * 80)
     logger.info(get_prompt(conversation))
@@ -299,6 +314,23 @@ def predict(
     max_context_length_tokens,
     model_select_dropdown,
 ):
+    """
+    Function to predict the response based on the user's input and selected model.
+
+    Parameters:
+    user_text (str): The input text from the user.
+    user_image (str): The input image from the user.
+    chatbot (str): The chatbot's name.
+    history (str): The history of the chat.
+    top_p (float): The top-p parameter for the model.
+    temperature (float): The temperature parameter for the model.
+    max_length_tokens (int): The maximum length of tokens for the model.
+    max_context_length_tokens (int): The maximum length of context tokens for the model.
+    model_select_dropdown (str): The selected model from the dropdown.
+
+    Returns:
+    generator: A generator that yields the chatbot outputs, history, and status.
+    """
     print("running the prediction function")
     try:
         tokenizer, vl_gpt, vl_chat_processor = fetch_model(model_select_dropdown)
