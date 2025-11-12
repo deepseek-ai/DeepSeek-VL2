@@ -47,6 +47,12 @@ def load_model(model_path, dtype=torch.bfloat16):
 def convert_conversation_to_prompts(conversation: Conversation):
     conv_prompts = []
 
+    if conversation.system_message and conversation.system_message.strip():
+        conv_prompts.append({
+            "role": "system",
+            "content": conversation.system_message
+        })
+
     last_image = None
 
     messages = conversation.messages

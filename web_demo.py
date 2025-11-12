@@ -24,6 +24,7 @@ import io
 import sys
 import base64
 from PIL import Image
+from langdetect import detect
 
 import gradio as gr
 import torch
@@ -148,7 +149,7 @@ def fetch_model(model_name: str, dtype=torch.bfloat16):
 
 
 def generate_prompt_with_history(
-    text, images, history, vl_chat_processor, tokenizer, max_length=2048
+    text, images, history, vl_chat_processor, tokenizer, max_length=2048, language="en"
 ):
     """
     Generate a prompt with history for the deepseek application.
@@ -159,6 +160,7 @@ def generate_prompt_with_history(
         history (list): List of previous conversation messages.
         tokenizer: The tokenizer used for encoding the prompt.
         max_length (int): The maximum length of the prompt.
+        language (str): The detected language code for setting response language.
 
     Returns:
         tuple: A tuple containing the generated prompt, image list, conversation, and conversation copy. If the prompt could not be generated within the max_length limit, returns None.
@@ -171,6 +173,7 @@ def generate_prompt_with_history(
 
     # Initialize conversation
     conversation = vl_chat_processor.new_chat_template()
+    conversation.set_system_message(f"Please reply in {language} language.")
 
     if history:
         conversation.messages = history
@@ -342,6 +345,14 @@ def predict(
     if images is None:
         images = []
 
+    detected_language = "en"
+    try:
+        detected_language = detect(text)
+        if detected_language in ("zh-cn", "zh-tw"):
+            detected_language = "zh"
+    except Exception as e:
+        logger.warning(f"Language detection failed: {e}. Defaulting to English.")
+
     # load images
     pil_images = []
     for img_or_file in images:
@@ -362,6 +373,7 @@ def predict(
         vl_chat_processor,
         tokenizer,
         max_length=max_context_length_tokens,
+        language=detected_language
     )
     all_conv, last_image = convert_conversation_to_prompts(conversation)
 
@@ -449,7 +461,6 @@ def retry(
         max_length_tokens,
         max_context_length_tokens,
         model_select_dropdown,
-        args.chunk_size
     )
 
 
