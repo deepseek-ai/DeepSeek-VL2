@@ -448,8 +448,7 @@ def retry(
         repetition_penalty,
         max_length_tokens,
         max_context_length_tokens,
-        model_select_dropdown,
-        args.chunk_size
+        model_select_dropdown
     )
 
 

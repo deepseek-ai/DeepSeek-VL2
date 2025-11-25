@@ -59,11 +59,11 @@ def delete_last_conversation(chatbot, history):
 
 
 def reset_state():
-    return [], [], None, "Reset Done"
+    return [], [], "Reset Done"
 
 
 def reset_textbox():
-    return gr.update(value=""), ""
+    return gr.update(value=""), "Reset Done"
 
 
 def cancel_outputing():
