@@ -1,5 +1,5 @@
-torch==2.0.1
-transformers==4.38.2
+torch>=2.0.1
+transformers>=4.38.2
 xformers>=0.0.21
 timm>=0.9.16
 accelerate
