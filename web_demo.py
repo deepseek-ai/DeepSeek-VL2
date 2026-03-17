@@ -486,11 +486,13 @@ def build_demo(args):
         with gr.Row(equal_height=True):
             with gr.Column(scale=4):
                 with gr.Row():
+                    # FIX: Added sanitize_html=False to allow HTML image rendering
                     chatbot = gr.Chatbot(
                         elem_id="deepseek_chatbot",
                         show_share_button=True,
                         bubble_full_width=False,
                         height=600,
+                        sanitize_html=False,          # <-- fix for visual grounding images
                     )
                 with gr.Row():
                     with gr.Column(scale=4):
