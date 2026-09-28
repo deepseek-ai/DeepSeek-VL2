@@ -64,7 +64,7 @@ class Conversation:
                 ret = system_prompt + seps[0]
             for i, (role, message) in enumerate(self.messages):
                 if message:
-                    if role == "User":
+                    if role == self.roles[0]:
                         ret += "<｜sft▁begin｜>\n" + message + self.sep #<｜sft▁begin｜>User Input<｜sft▁end｜>\nResponse<｜end▁of▁sentence｜>
                     else:
                         ret += message + self.sep2
