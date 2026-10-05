@@ -249,7 +249,7 @@ class DeepseekVLV2Processor(ProcessorMixin):
         image_index = 0
 
         conv = get_conv_template(self.sft_format)
-        conv_system_message = conv.system_message
+        conv_system_message = systems if systems else conv.system_message
 
         for idx, message in enumerate(messages):
             if idx == 0:
@@ -416,7 +416,7 @@ class DeepseekVLV2Processor(ProcessorMixin):
                 system_prompt=system_prompt,
             )
             tokenized_str, masked_tokenized_str, images_list, images_seq_mask, images_spatial_crop, num_image_tokens = self.format_messages_v2(
-                conversations, images)
+                conversations, images, systems=system_prompt)
         else:
             if apply_sft_format:
                 sft_format = self.format_prompts(
